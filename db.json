@@ -6,6 +6,37 @@
       "name": "Kenzinho",
       "age": 38,
       "id": 1
+    },
+    {
+      "email": "wyller@mail.com",
+      "password": "$2a$10$R2cX/M/ijwACuMEv/OtXKOwo5eyFUBZasR8ejkozLLU6rcE4l.byi",
+      "firstname": "Wyller",
+      "lastname": "Fernandes",
+      "age": 29,
+      "id": 2
+    }
+  ],
+  "itens": [
+    {
+      "userId": 2,
+      "type": "Eletronico",
+      "name": "Computador",
+      "url_img": "https://s2.glbimg.com/4J1KP8B8iS8tDhHyxTGJhPKkpO8=/smart/e.glbimg.com/og/ed/f/original/2020/02/03/computador-para-arquiteto-06.jpg",
+      "id": 1
+    }
+  ],
+  "info": [
+    {
+      "userId": 2,
+      "UserName": "Leganza",
+      "url_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/1999_Daewoo_Leganza.jpg/1200px-1999_Daewoo_Leganza.jpg",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "UserName": "Kenzie",
+      "url_img": "https://mma.prnewswire.com/media/1002702/Kenzie_Academy_Logo.jpg?p=facebook",
+      "id": 2
     }
   ]
 }

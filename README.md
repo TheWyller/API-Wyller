@@ -1,24 +1,118 @@
-# json-server-base
+# Documentação da Api
 
-Esse é o repositório com a base de JSON-Server + JSON-Server-Auth já configurada, feita para ser usada no desenvolvimento das API's nos Capstones do Q2.
+## Registrar Usuário:
 
-## Endpoints
+### POST/register
 
-Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/package/json-server-auth), existem 3 endpoints que podem ser utilizados para cadastro e 2 endpoints que podem ser usados para login.
+         {
+            "email": "wyller@mail.com",
+            "password": "123456",
+            "firstname":"Wyller",
+            "lastname": "Fernandes",
+            "age": 29
+          }
 
-### Cadastro
+## Logar Usuário:
 
-POST /register <br/>
-POST /signup <br/>
-POST /users
+### POST/login
 
-Qualquer um desses 3 endpoints irá cadastrar o usuário na lista de "Users", sendo que os campos obrigatórios são os de email e password.
-Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usuários.
+          {
+            "email": "wyller@mail.com",
+            "password": "123456"
+          }
 
+---
 
-### Login
+## Ver seu próprio Usuario:
 
-POST /login <br/>
-POST /signin
+\*deve estar logado
 
-Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
+    GET/users/:id-do-user
+
+---
+
+## Cadastrar item:
+
+\*deve estar logado - será visto por todos, mas só o dono pode editar
+
+### POST/itens
+
+          {
+            "userId": 2,
+            "type":"Eletronico",
+            "name":"Computador",
+            "url_img":"https://s2.glbimg.com/4J1KP8B8..."
+          }
+
+## Cadastrar item:
+
+\*deve estar logado - será visto por todos que estiverem logados, mas só o dono pode editar
+
+### POST/info
+
+          {
+            "userId": 2,
+            "UserName":
+            "Leganza",
+            "url_img":"https://upload.wikimedia.org/wikipe...",
+          }
+
+---
+
+## Visualizar todos os itens:
+
+    GET/itens
+
+## Visualizar um os itens:
+
+    GET/itens/:id-do-item
+
+---
+
+## Visualizar todas as info:
+
+    GET/info
+
+## Visualizar uma info:
+
+\*apenas o dono da info poder usar essa rota
+
+    GET/info/:id-do-info
+
+---
+
+## Modificar um os itens:
+
+\*apenas o dono do item poder usar essa rota (pode ser um ou vários atributos)
+
+### PATCH/itens/:id-do-item
+
+          {
+            "userId": 2,
+            "type":"Eletronico222222"
+          }
+
+## Modificar uma info:
+
+\*apenas o dono do item poder usar essa rota (pode ser um ou vários atributos)
+
+### PATCH/info/:id-do-info
+
+          {
+            "userId": 2,
+            "UserName": "Leganzaaaaa"
+          }
+
+---
+
+## Deletar um dos itens
+
+\*apenas o dono do item poder usar essa rota
+
+    DELETE/itens/:id-do-item
+
+## Deletar uma info
+
+\*apenas o dono do item poder usar essa rota
+
+    DELETE/info/:id-do-info

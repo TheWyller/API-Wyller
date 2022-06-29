@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API WYLLER</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Documentação da Api</h1>
+    </header>
+
+    <main>
+      <hr />
+      <section>
+        <h2>Registrar Usuário:</h2>
+        <p>POST/register</p>
+        <pre>
+        <code>
+          { 
+            "email": "wyller@mail.com", 
+            "password": "123456",
+            "firstname":"Wyller", 
+            "lastname": "Fernandes", 
+            "age": 29 
+          }
+        </code>
+      </pre>
+      </section>
+      <section>
+        <h2>Logar Usuário</h2>
+        <p>POST/login</p>
+        <pre>
+        <code> 
+          { 
+            "email": "wyller@mail.com", 
+            "password": "123456" 
+          } 
+        </code>
+      </pre>
+      </section>
+      <hr />
+      <section>
+        <h2>Ver seu próprio Usuario</h2>
+        <p>*deve estar logado</p>
+        <p>GET/users/:id-do-user</p>
+      </section>
+      <hr />
+      <section>
+        <h2>Cadastrar item</h2>
+        <p>
+          *deve estar logado - será visto por todos, mas só o dono pode editar
+        </p>
+        <p>POST/itens</p>
+        <pre>
+        <code>
+          { 
+            "userId": 2, 
+            "type":"Eletronico", 
+            "name":"Computador",
+            "url_img":"https://s2.glbimg.com/4J1KP8B8..."
+          }
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Cadastrar info</h2>
+        <p>
+          *deve estar logado - será visto por todos que estiverem logados, mas
+          só o dono pode editar
+        </p>
+        <p>POST/info</p>
+        <pre>
+        <code>
+          { 
+            "userId": 2, 
+            "UserName": 
+            "Leganza", 
+            "url_img":"https://upload.wikimedia.org/wikipe...",
+          }
+        </code>
+      </pre>
+      </section>
+      <hr />
+      <section>
+        <h2>Visualizar todos os itens</h2>
+        <p>GET/itens</p>
+      </section>
+      <section>
+        <h2>Visualizar um os itens</h2>
+        <p>GET/itens/:id-do-item</p>
+      </section>
+      <hr />
+      <section>
+        <h2>Visualizar todas as info</h2>
+        <p>GET/info</p>
+      </section>
+      <section>
+        <h2>Visualizar uma info</h2>
+        <p>apenas o dono da info poder usar essa rota</p>
+        <p>GET/info/:id-do-info</p>
+      </section>
+      <hr />
+      <section>
+        <h2>Modificar um os itens</h2>
+        <p>
+          *apenas o dono do item poder usar essa rota (pode ser um ou vários
+          atributos)
+        </p>
+        <p>PATCH/itens/:id-do-item</p>
+        <pre>
+        <code> 
+          { 
+            "userId": 2, 
+            "type":"Eletronico222222" 
+          } 
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Modificar uma info</h2>
+        <p>
+          *apenas o dono do item poder usar essa rota (pode ser um ou vários
+          atributos)
+        </p>
+        <p>PATCH/info/:id-do-info</p>
+        <pre>
+        <code> 
+          { 
+            "userId": 2, 
+            "UserName": "Leganzaaaaa" 
+          } 
+        </code>
+      </pre>
+      </section>
+      <hr />
+      <section>
+        <h2>Deletar um dos itens</h2>
+        <p>apenas o dono do item poder usar essa rota</p>
+        <p>DELETE/itens/:id-do-item</p>
+      </section>
+
+      <section>
+        <h2>Deletar uma info</h2>
+        <p>apenas o dono da info poder usar essa rota</p>
+        <p>DELETE/info/:id-do-info</p>
+      </section>
+    </main>
+  </body>
+</html>
